@@ -14,10 +14,30 @@ public class FiveInterestState implements InterestState {
     public void calc() {
         logger.info("Oprocentowanie o wysokości 5%");
 
-            double interestPercent = 0.05;
-            double day = interest.getDuration()*30/365;
-            double zysk = (basicBankAccount.getBalance()  * interestPercent / day);
+    }
+
+    @Override
+    public double calculate() {
+        logger.info("Oprocentowanie o wysokości 5%");
+
+        double interestPercent = 0.05;
+        double day = interest.getDuration()*30/365;
+        double zysk = (basicBankAccount.getBalance()  * interestPercent / day);
 //        zysk = x * (p / 100_ * (d / 365)
 //        gdzie x to kwota lokaty, p –oprocentowanie, a d –czas trwania lokaty wyrażony w dniach.
+    }
+    @Override
+    public Interest getInvestment() {
+        return interest;
+    }
+
+    @Override
+    public double breakInvestment() {
+        return interest.getBalance();
+    }
+
+    @Override
+    public double closeInvestment() {
+        return interest.getBalance()+ (calculate());
     }
 }
