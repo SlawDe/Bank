@@ -2,12 +2,14 @@ package Bank.State;
 
 public interface InterestState {
 
-    void calc();
+    //void calc();
+    double calculate();
 
-    Interest getInvestment();
+    Interest getInterest();
 
-    double breakInvestment();
+    double breakInterest();
 
-    double closeInvestment();
+    double closeInterest();
+
 
 }

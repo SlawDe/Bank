@@ -11,33 +11,28 @@ public class FiveInterestState implements InterestState {
     private static final Logger logger = LoggerFactory.getLogger(FiveInterestState.class);
 
     @Override
-    public void calc() {
-        logger.info("Oprocentowanie o wysokości 5%");
-
-    }
-
-    @Override
     public double calculate() {
         logger.info("Oprocentowanie o wysokości 5%");
 
         double interestPercent = 0.05;
         double day = interest.getDuration()*30/365;
         double zysk = (basicBankAccount.getBalance()  * interestPercent / day);
+        return zysk;
 //        zysk = x * (p / 100_ * (d / 365)
 //        gdzie x to kwota lokaty, p –oprocentowanie, a d –czas trwania lokaty wyrażony w dniach.
     }
     @Override
-    public Interest getInvestment() {
+    public Interest getInterest() {
         return interest;
     }
 
     @Override
-    public double breakInvestment() {
+    public double breakInterest() {
         return interest.getBalance();
     }
 
     @Override
-    public double closeInvestment() {
+    public double closeInterest() {
         return interest.getBalance()+ (calculate());
     }
 }

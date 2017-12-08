@@ -8,7 +8,6 @@ public class Interest {
     private Date startDate;
     private int duration;
     private double balance;
-    private double balance2;
 
     public Interest(double balance, int duration) {
         this.setInterest(balance);
@@ -27,15 +26,11 @@ public class Interest {
     }
 
     public void calculateInterest() {
-        interestState.calc();
+        interestState.calculate();
     }
 
     public InterestState getInterestState() {
         return interestState;
-    }
-
-    public void setInterestState(InterestState interestState) {
-        this.interestState = interestState;
     }
 
     public Date getStartDate() {
@@ -58,11 +53,4 @@ public class Interest {
         return balance;
     }
 
-    public double getBalance2() {
-        return balance2;
-    }
-
-    public void setBalance2(double balance2) {
-        this.balance2 = balance2;
-    }
 }
